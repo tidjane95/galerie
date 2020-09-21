@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}'Edit Pin #' ~ pin.id{% endblock %}
+
+{% block body %}
+        <h1>Edit Pin #{{ pin.id }}</h1>
+        {{form_start(monForm)}}
+            {{form_widget(monForm)}}
+            <input type="submit" value="Update Pin" formnovalidate>
+        {{form_end(monForm)}}
+
+        
+        
+{% endblock %}
