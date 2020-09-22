@@ -35,14 +35,15 @@ class Pin
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      * 
      * @Vich\UploadableField(mapping="pin_image", fileNameProperty="imageName")
      * 
      * @var File|null
+     */
+    private $imageFile;
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $imageName;
 
