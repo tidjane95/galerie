@@ -7,6 +7,7 @@ use App\Repository\PinRepository;
 use App\Entity\Traits\Timestampable;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PinRepository::class)
@@ -26,11 +27,15 @@ class Pin
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Le Titre ne peut pas etre vide")
+     * @Assert\Length(min=3, minMessage="Le titre contient au minimun 3 caractere")
      */
     private $titre;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="La Description ne peut pas etre vide")
+     * @Assert\Length(min=10, minMessage="La description contient au minimun 10 caractere")
      */
     private $description;
 
