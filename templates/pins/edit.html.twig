@@ -3,12 +3,15 @@
 {% block title %}'Edit Pin #' ~ pin.id{% endblock %}
 
 {% block body %}
-        <h1>Edit Pin #{{ pin.id }}</h1>
-        {{form_start(monForm)}}
-            {{form_widget(monForm)}}
-            <input type="submit" value="Update Pin" formnovalidate>
-        {{form_end(monForm)}}
-
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <h1>Edit Pin #{{ pin.id }}</h1>
+            {{form_start(monForm)}}
+                {{form_widget(monForm)}}
+                <input type="submit" value="Update Pin" class="btn btn-primary btn-block" formnovalidate>
+            {{form_end(monForm)}}
+        </div>
+    </div>
         
         
 {% endblock %}
