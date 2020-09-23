@@ -25,3 +25,7 @@ yarn-error.log
 ###> custom eve vars ###
 /public/uploads/
 ###< and custom eve vars ###
+
+###> liip/imagine-bundle ###
+/public/media/cache/
+###< liip/imagine-bundle ###
