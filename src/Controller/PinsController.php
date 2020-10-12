@@ -41,9 +41,7 @@ class PinsController extends AbstractController
         $form= $this->createForm(PinType:: class, $pin);
         $form->handleRequest($request);
         if($form-> isSubmitted() && $form-> isValid()){
-            $sara = $userRepo->findOneBy(['email' => 'sara@example.com']);
-            $pin-> setUser($sara);
-
+            $pin-> setUser($this->getUser());
             $em -> persist($pin);
             $em -> flush();
             $this-> addFlash('success', 'Pin Ajouter avec succe');
