@@ -9,6 +9,7 @@ use App\Repository\UserRepository;
 use App\Entity\Traits\Timestampable;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -27,16 +28,20 @@ class User implements UserInterface
     private $id;
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Veuillez entrer votre prenon")
      */
     private $firstName;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Veuillez entrer votre non")
      */
     private $lastName;
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
+     * @Assert\NotBlank(message="Veuillez entrer votre adresse email")
+     * @Assert\Email(message="Veuillez entrer une adresse email valide")
      */
     private $email;
 
